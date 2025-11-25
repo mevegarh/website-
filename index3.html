@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    // Add this script in head to configure AdMob
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-app-pub-9318416828954130/3940214191",
+      enable_page_level_ads: true,
+      overlays: {bottom: true}
+    });
+  </script>
+  <meta charset="UTF-8">
+  <title>📁 Folder & Billing App (All in One)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 🔹 AdMob Banner Styling */
+    .ad-container {
+      width: 100%;
+      margin: 10px 0;
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      padding: 10px;
+      border-radius: 8px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .ad-container ins {
+      display: block !important;
+      margin: 0 auto;
+    }
+
+    .ad-label {
+      color: #ccc;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    /* 🔹 Login Page Styles */
+    #loginPage {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, #121212, #232323);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: white;
+    }
+    
+    .login-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #00ffcc;
+    }
+    
+    .login-input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      box-sizing: border-box;
+    }
+    
+    .login-input::placeholder {
+      color: #ccc;
+    }
+    
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #007bff, #00aaff);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    .login-btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px #00aaff;
+    }
+    
+    .login-message {
+      margin-top: 15px;
+      text-align: center;
+      color: #00ffcc;
+      font-size: 14px;
+    }
+    
+    /* 🔹 Account Section Styles */
+    .account-section {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .account-button {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .account-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+    
+    .account-dropdown {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      color: #333;
+      display: none;
+      overflow: hidden;
+      z-index: 1001;
+    }
+    
+    .account-dropdown.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .account-header {
+      padding: 20px;
+      background: linear-gradient(135deg, #4a90e2, #8e44ad);
+      color: white;
+      text-align: center;
+    }
+    
+    .account-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 30px;
+      border: 3px solid white;
+    }
+    
+    .account-details {
+      padding: 15px;
+    }
+    
+    .account-detail {
+      margin-bottom: 10px;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 6px;
+    }
+    
+    .account-detail label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+    
+    .account-actions {
+      padding: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .account-actions button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .edit-btn {
+      background: #007bff;
+      color: white;
+    }
+    
+    .edit-btn:hover {
+      background: #0056b3;
+    }
+    
+    .logout-btn {
+      background: #dc3545;
+      color: white;
+    }
+    
+    .logout-btn:hover {
+      background: #c82333;
+    }
+    
+    /* Edit Account Modal */
+    .edit-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .edit-modal.show {
+      display: flex;
+    }
+    
+    .edit-modal-content {
+      background: white;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    .edit-modal h3 {
+      margin-top: 0;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .edit-input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 15px;
+    }
+    
+    .modal-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .modal-buttons button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .save-btn {
+      background: #28a745;
+      color: white;
+    }
+    
+    .save-btn:hover {
+      background: #218838;
+    }
+    
+    .cancel-btn {
+      background: #6c757d;
+      color: white;
+    }
+    
+    .cancel-btn:hover {
+      background: #545b62;
+    }
+    
+    /* 🔹 Payment Date Section */
+    .payment-date-section {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    
+    .payment-date-section h3 {
+      margin-top: 0;
+      color: #00ffcc;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .date-input-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    
+    .date-input-group input {
+      flex: 1;
+      min-width: 120px;
+    }
+    
+    .date-info {
+      margin-top: 10px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    
+    .date-info.active {
+      background: rgba(255, 193, 7, 0.2);
+      border-left: 4px solid #ffc107;
+    }
+    
+    .date-info.expired {
+      background: rgba(220, 53, 69, 0.2);
+      border-left: 4px solid #dc3545;
+    }
+    
+    .date-info.completed {
+      background: rgba(40, 167, 69, 0.2);
+      border-left: 4px solid #28a745;
+    }
+    
+    /* 🔹 Main QR Code Section */
+    .main-qr-section {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 15px 0;
+      text-align: center;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .main-qr-section h3 {
+      margin-top: 0;
+      color: #00ffcc;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .qr-container {
+      margin: 15px 0;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .no-qr-message {
+      color: #ccc;
+      font-style: italic;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      border: 1px dashed #666;
+    }
+
+    .qr-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .qr-buttons button {
+      width: auto;
+      padding: 10px 15px;
+      font-size: 14px;
+      margin: 5px;
+    }
+
+    /* QR Code Preview */
+    .qr-preview {
+      border: 3px solid #4caf50;
+      box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    }
+
+    /* 🔹 Loader */
+    #loader { 
+      position: fixed; inset: 0; 
+      background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+      display: flex; justify-content: center; align-items: center; flex-direction: column; 
+      color: white; font-family: 'Segoe UI', sans-serif; 
+      z-index: 9999; transition: opacity 1s ease, visibility 1s;
+    }
+    #loader.fade-out { opacity: 0; visibility: hidden; }
+    .spinner { 
+      border: 6px solid rgba(255,255,255,0.2); border-top: 6px solid #00ffcc;
+      border-radius: 50%; width: 80px; height: 80px;
+      display: flex; justify-content: center; align-items: center;
+      animation: spin 1s linear infinite; margin-bottom: 15px; 
+    }
+    .spinner-text { position: absolute; font-size: 30px; font-weight: bold; color: white; }
+    @keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0; padding: 20px;
+      background: linear-gradient(to bottom right, #121212, #232323);
+      color: #fff; min-height: 100vh;
+      display: flex; flex-direction: column;
+      cursor: url('https://cur.cursors-4u.net/others/oth-1/oth88.cur'), auto;
+    }
+
+    .app-header {
+      text-align: center; font-size: 28px; font-weight: 600;
+      padding: 15px;
+      background: linear-gradient(135deg, #4a90e2, #8e44ad);
+      border-radius: 12px; margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    #container { display: flex; gap: 20px; flex-wrap: wrap; }
+    #mainContent { flex: 2; min-width: 280px; }
+
+    button {
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #007bff, #00aaff);
+      color: white; border: none; border-radius: 8px;
+      cursor: pointer; margin-bottom: 15px; width: 100%;
+      font-weight: 500; transition: all 0.3s ease;
+    }
+    button:hover { transform: scale(1.03); box-shadow: 0 0 10px #00aaff; }
+
+    .folder {
+      padding: 12px 15px; background: rgba(76,175,80,0.85);
+      border-radius: 8px; margin-bottom: 10px; cursor: pointer;
+      text-align: center; font-weight: 500; 
+      transition: all 0.3s ease;
+    }
+    .folder:hover { transform: scale(1.05); box-shadow: 0 0 10px #4caf50; }
+
+    #billingPage {
+      display: none; background: linear-gradient(to right, #283E51, #485563);
+      color: white; padding: 20px; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .product-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 12px; background: rgba(255,255,255,0.06);
+      padding: 10px; border-radius: 8px; flex-wrap: wrap; gap: 5px;
+    }
+
+    input {
+      padding: 10px; border: none; border-radius: 6px;
+      outline: none; font-size: 15px; margin-bottom: 5px;
+    }
+    input[type="text"] { flex: 1 1 60%; }
+    input[type="number"] { flex: 1 1 30%; text-align: right; }
+    input[type="tel"] { flex: 1 1 60%; margin-right: 5px; }
+
+    #total, #remaining {
+      text-align: right; font-size: 18px; font-weight: bold; margin-top: 10px;
+      padding: 8px; border-radius: 6px;
+    }
+    #total { background: rgba(0,0,0,0.2); }
+    #remaining.red { background: rgba(255,0,0,0.12); color: #ff6b6b; }
+    #remaining.green { background: rgba(0,255,100,0.08); color: #00ff7f; }
+
+    #remaining { transition: box-shadow 0.25s ease; }
+    #remaining.flash { box-shadow: 0 0 8px rgba(255,255,255,0.15); transform: scale(1.01); }
+
+    #backBtn { background: #6c757d; }
+
+    /* Money History Styles */
+    .money-history {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.05);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .money-history h3 {
+      margin-top: 0;
+      color: #00ffcc;
+    }
+    .money-entry {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .money-entry:last-child {
+      border-bottom: none;
+    }
+    .money-date {
+      color: #ccc;
+    }
+    .money-amount {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    /* Enhanced Money Subtraction Styles */
+    .money-subtraction-feedback {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 255, 100, 0.9);
+      color: #000;
+      padding: 20px 40px;
+      border-radius: 12px;
+      font-size: 24px;
+      font-weight: bold;
+      z-index: 1000;
+      animation: moneySubtract 1.5s ease-out forwards;
+      box-shadow: 0 0 30px rgba(0, 255, 100, 0.5);
+    }
+
+    @keyframes moneySubtract {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+      40% { transform: translate(-50%, -50%) scale(1); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    }
+
+    .payment-summary {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .payment-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+
+    /* 🔹 Video Section Styling */
+    #videoSection { text-align: center; margin-top: auto; padding: 15px; }
+    .modal { 
+      display: none; position: fixed; inset: 0; 
+      background: rgba(0,0,0,0.85);
+      justify-content: center; align-items: center; 
+      z-index: 2000;
+    }
+    .modal-content { 
+      position: relative; 
+      background: #000; 
+      border-radius: 12px; 
+      width: 90%; 
+      max-width: 700px;
+      max-height: 80vh; 
+      overflow: hidden; 
+      box-shadow: 0 0 25px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+    }
+    .close { 
+      position: absolute; 
+      top: 8px; right: 14px; 
+      color: white; font-size: 26px; 
+      cursor: pointer; 
+      z-index: 10;
+      text-shadow: 0 0 5px black;
+    }
+    video { 
+      width: 100%; 
+      height: auto; 
+      border: none; 
+      max-height: 80vh; 
+      border-radius: 12px;
+    }
+
+    /* 🔹 Animated Glowing Finger Pointer */
+    .glow-finger {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 36px;
+      animation: glow 1.5s infinite alternate;
+      color: #00ffcc;
+      filter: drop-shadow(0 0 10px #00ffcc);
+      z-index: 9999;
+    }
+
+    @keyframes glow {
+      from { transform: translateY(0px); opacity: 0.7; }
+      to { transform: translateY(-10px); opacity: 1; filter: drop-shadow(0 0 20px #00ffff); }
+    }
+
+    @media (max-width: 500px) {
+      .app-header { font-size: 22px; }
+      .product-row { flex-direction: column; align-items: stretch; }
+      input[type="text"], input[type="number"], input[type="tel"] { width: 100%; }
+      button { font-size: 14px; padding: 10px; }
+      .modal-content { max-width: 95%; max-height: 70vh; }
+      .qr-buttons { flex-direction: column; }
+      .qr-buttons button { width: 100%; }
+      .main-qr-section {
+        margin: 10px 0;
+      }
+      .account-dropdown {
+        width: 280px;
+        right: -10px;
+      }
+      .date-input-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div id="loginPage">
+    <div class="login-container">
+      <h2>Welcome to Folder & Billing App</h2>
+      <form id="loginForm">
+        <input type="text" class="login-input" id="userName" placeholder="Your Name" required>
+        <input type="text" class="login-input" id="shopName" placeholder="Shop Name" required>
+        <input type="tel" class="login-input" id="phoneNumber" placeholder="Phone Number" required>
+        <button type="submit" class="login-btn">Submit & Create Account</button>
+      </form>
+      <div class="login-message" id="loginMessage"></div>
+    </div>
+  </div>
+
+  <div id="loader">
+    <div class="spinner"><div class="spinner-text">C</div></div>
+    <h2>Loading Folder & Billing App...</h2>
+  </div>
+
+  <!-- Main App Content -->
+  <div id="mainApp" style="display: none;">
+    <!-- Account Section -->
+    <div class="account-section">
+      <div class="account-button" id="accountButton">
+        👤
+      </div>
+      <div class="account-dropdown" id="accountDropdown">
+        <div class="account-header">
+          <div class="account-avatar" id="userAvatar">👤</div>
+          <h3 id="userDisplayName">User Name</h3>
+          <p id="userShopName">Shop Name</p>
+        </div>
+        <div class="account-details">
+          <div class="account-detail">
+            <label>Your Name</label>
+            <span id="detailUserName">-</span>
+          </div>
+          <div class="account-detail">
+            <label>Shop Name</label>
+            <span id="detailShopName">-</span>
+          </div>
+          <div class="account-detail">
+            <label>Phone Number</label>
+            <span id="detailPhoneNumber">-</span>
+          </div>
+        </div>
+        <div class="account-actions">
+          <button class="edit-btn" onclick="openEditModal()">✏️ Edit Account</button>
+          <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Account Modal -->
+    <div class="edit-modal" id="editModal">
+      <div class="edit-modal-content">
+        <h3>Edit Account Details</h3>
+        <form id="editForm">
+          <input type="text" class="edit-input" id="editUserName" placeholder="Your Name" required>
+          <input type="text" class="edit-input" id="editShopName" placeholder="Shop Name" required>
+          <input type="tel" class="edit-input" id="editPhoneNumber" placeholder="Phone Number" required>
+          <div class="modal-buttons">
+            <button type="button" class="cancel-btn" onclick="closeEditModal()">Cancel</button>
+            <button type="submit" class="save-btn">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- AdMob Banner Ad - FIXED VERSION -->
+    <div class="ad-container">
+      <div class="ad-label">Advertisement</div>
+      <ins class="adsbygoogle"
+           style="display:block; width: 100%; height: 100px;"
+           data-ad-client="ca-app-pub-9318416828954130/6914574932"
+           data-ad-slot="6914574932"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="app-header">📁 Folder & Billing App</div>
+
+    <!-- QR Code Section on Main Page -->
+    <div class="main-qr-section">
+      <div class="qr-container">
+        <h3>💳 Payment QR Code</h3>
+        <img id="mainQrImage" src="" 
+             style="width: 200px; height: 200px; object-fit: cover; border: 2px solid white; border-radius: 10px; display:none;">
+        <div id="noMainQRMessage" class="no-qr-message">
+          No QR code added. Click below to add your payment QR code.
+        </div>
+      </div>
+      <div class="qr-buttons">
+        <button onclick="chooseQR()" style="background:#ff9800;">
+          📷 Add Payment QR Code
+        </button>
+        <button onclick="shareMainQR()" style="background:#2196F3; display:none;" id="shareMainQRBtn">
+          📤 Share QR Code
+        </button>
+        <button onclick="removeMainQR()" style="background:#f44336; display:none;" id="removeMainQRBtn">
+          🗑 Remove QR
+        </button>
+      </div>
+
+      <!-- Hidden File Picker -->
+      <input type="file" id="qrPicker" accept="image/*" style="display:none;" onchange="saveMainQR(event)">
+    </div>
+
+    <div id="folderPage">
+      <div id="container">
+        <div id="mainContent">
+          <button onclick="createNewFolder()">+ New Folder</button>
+          <div id="folders"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="billingPage">
+      <button id="backBtn" onclick="showFolderPage()">⬅ Back</button>
+      <h1 id="folderName"></h1>
+     
+      <div id="dateTime"></div>
+
+      <div id="productsContainer"></div>
+
+      <button onclick="addProductLine()">+ New Line</button>
+      <button onclick="saveFolder()">💾 Save Folder</button>
+      <button onclick="deleteFolder()">🗑 Delete Folder</button>
+
+      <!-- Payment Date Section -->
+      <div class="payment-date-section">
+        <h3>📅 Payment Date Reminder</h3>
+        <div class="date-input-group">
+          <input type="number" id="paymentDays" placeholder="Days to pay (e.g., 2, 3, 5)" min="1" max="30">
+          <button onclick="setPaymentDate()" style="background:#ff9800;">Set Payment Date</button>
+          <button onclick="sendReminderNow()" style="background:#2196F3;">📤 Send Reminder Now</button>
+        </div>
+        <div id="paymentDateInfo" class="date-info">
+          No payment date set
+        </div>
+      </div>
+
+      <div style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 5px;">
+        <input type="tel" id="customerPhone" placeholder="Customer Phone Number">
+        <button onclick="makeCall()">📞 Call</button>
+        <button onclick="sendSMS()">💬 Send Message</button>
+        <button onclick="generateBillPDF()" style="background:#9C27B0;">📄 Generate Bill PDF</button>
+      </div>
+
+      <!-- Payment Summary Section -->
+      <div class="payment-summary">
+        <div class="payment-row">
+          <span>Total Amount:</span>
+          <span id="totalAmountDisplay">₹0</span>
+        </div>
+        <div class="payment-row">
+          <span>Total Paid:</span>
+          <span id="totalPaidDisplay">₹0</span>
+        </div>
+        <div class="payment-row" style="font-weight: bold; font-size: 18px;">
+          <span>Remaining Balance:</span>
+          <span id="remainingBalanceDisplay">₹0</span>
+        </div>
+      </div>
+
+      <div id="total">Total: ₹0</div>
+
+      <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 10px;">
+        <input type="number" id="givenMoney" placeholder="Enter Given Money ₹" style="flex: 1;">
+        <button id="enterBtn" onclick="updateBalance(true)" style="flex-shrink: 0; background: #28a745;">Enter</button>
+      </div>
+      <div id="remaining">Remaining: ₹0</div>
+
+      <!-- Money History Section -->
+      <div class="money-history">
+        <h3>💰 Money Given History</h3>
+        <div id="moneyHistory"></div>
+      </div>
+    </div>
+
+    <div id="videoSection">
+      <button onclick="openVideo()">📺 Watch Video – How to Use</button>
+    </div>
+
+    <div id="videoModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeVideo()">&times;</span>
+        <video id="tutorialVideo" controls>
+          <source src="VIDEO.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Improved AdMob initialization
+  function initializeAds() {
+    try {
+      // Initialize banner ad
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      
+      console.log('AdMob initialized successfully');
+    } catch (e) {
+      console.log('AdMob Error: ', e);
+    }
+  }
+
+  function showInterstitialAd() {
+    try {
+      // For interstitial ads, you need a different ad unit
+      // This is just a placeholder - you need to create a separate interstitial ad unit in AdMob
+      console.log('Interstitial ad would show here');
+    } catch (e) {
+      console.log('Interstitial Ad Error: ', e);
+    }
+  }
+
+  // Loader
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    setTimeout(() => {
+      loader.classList.add("fade-out");
+      // Initialize ads after page loads
+      setTimeout(initializeAds, 1000);
+    }, 2000);
+  });
+
+  let currentFolder = null, products = [], total = 0;
+  let userData = null;
+  let paymentReminderInterval = null;
+
+  function toNumber(val){ return isNaN(val) || val=="" ? 0 : Number(val); }
+  function formatCurrency(num){ return Number(num).toLocaleString('en-IN'); }
+
+  // Account Management Functions
+  function toggleAccountDropdown() {
+    const dropdown = document.getElementById('accountDropdown');
+    dropdown.classList.toggle('show');
+  }
+
+  function closeAccountDropdown() {
+    const dropdown = document.getElementById('accountDropdown');
+    dropdown.classList.remove('show');
+  }
+
+  function openEditModal() {
+    const modal = document.getElementById('editModal');
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    
+    if (userData) {
+      document.getElementById('editUserName').value = userData.userName;
+      document.getElementById('editShopName').value = userData.shopName;
+      document.getElementById('editPhoneNumber').value = userData.phoneNumber;
+    }
+    
+    modal.classList.add('show');
+    closeAccountDropdown();
+  }
+
+  function closeEditModal() {
+    const modal = document.getElementById('editModal');
+    modal.classList.remove('show');
+  }
+
+  function logout() {
+    if (confirm("Are you sure you want to logout?")) {
+      localStorage.removeItem("userData");
+      document.getElementById("mainApp").style.display = "none";
+      document.getElementById("loginPage").style.display = "flex";
+      closeAccountDropdown();
+      
+      // Clear any running intervals
+      if (paymentReminderInterval) {
+        clearInterval(paymentReminderInterval);
+      }
+    }
+  }
+
+  function updateAccountDisplay() {
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    
+    if (userData) {
+      document.getElementById('userDisplayName').textContent = userData.userName;
+      document.getElementById('userShopName').textContent = userData.shopName;
+      document.getElementById('detailUserName').textContent = userData.userName;
+      document.getElementById('detailShopName').textContent = userData.shopName;
+      document.getElementById('detailPhoneNumber').textContent = userData.phoneNumber;
+      
+      // Set avatar to first letter of user name
+      const avatar = document.getElementById('userAvatar');
+      if (userData.userName && userData.userName.length > 0) {
+        avatar.textContent = userData.userName.charAt(0).toUpperCase();
+      }
+    }
+  }
+
+  // Payment Date Functions
+  function setPaymentDate() {
+    const days = parseInt(document.getElementById('paymentDays').value);
+    if (!days || days < 1) {
+      alert('Please enter a valid number of days');
+      return;
+    }
+
+    const today = new Date();
+    const dueDate = new Date(today);
+    dueDate.setDate(today.getDate() + days);
+    
+    const paymentDateInfo = {
+      setDate: today.toISOString(),
+      dueDate: dueDate.toISOString(),
+      days: days,
+      messageSent: false
+    };
+
+    // Save to current folder
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const folderIndex = savedFolders.findIndex(f => f.name === currentFolder);
+    
+    if (folderIndex > -1) {
+      savedFolders[folderIndex].paymentDateInfo = paymentDateInfo;
+      localStorage.setItem("folders", JSON.stringify(savedFolders));
+      updatePaymentDateDisplay(paymentDateInfo);
+      alert(`Payment reminder set for ${days} day(s) from now`);
+    }
+  }
+
+  function updatePaymentDateDisplay(paymentDateInfo) {
+    const infoElement = document.getElementById('paymentDateInfo');
+    
+    if (!paymentDateInfo) {
+      infoElement.textContent = 'No payment date set';
+      infoElement.className = 'date-info';
+      return;
+    }
+
+    const dueDate = new Date(paymentDateInfo.dueDate);
+    const today = new Date();
+    const timeDiff = dueDate - today;
+    const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    
+    let status = 'active';
+    let message = '';
+    
+    if (daysRemaining < 0) {
+      status = 'expired';
+      message = `Payment was due ${Math.abs(daysRemaining)} day(s) ago`;
+    } else if (daysRemaining === 0) {
+      status = 'active';
+      message = 'Payment is due today';
+    } else {
+      status = 'active';
+      message = `Payment due in ${daysRemaining} day(s) - ${dueDate.toLocaleDateString()}`;
+    }
+
+    // Check if payment is completed
+    const remaining = total - getTotalGivenMoney();
+    if (remaining <= 0) {
+      status = 'completed';
+      message = '✅ Payment completed!';
+    }
+
+    infoElement.textContent = message;
+    infoElement.className = `date-info ${status}`;
+    
+    // Auto-send message if due date has arrived and message not sent
+    if (daysRemaining <= 0 && !paymentDateInfo.messageSent && remaining > 0) {
+      sendAutoReminder();
+      // Mark as sent
+      paymentDateInfo.messageSent = true;
+      let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+      const folderIndex = savedFolders.findIndex(f => f.name === currentFolder);
+      if (folderIndex > -1) {
+        savedFolders[folderIndex].paymentDateInfo = paymentDateInfo;
+        localStorage.setItem("folders", JSON.stringify(savedFolders));
+      }
+    }
+  }
+
+  function sendAutoReminder() {
+    const phone = document.getElementById("customerPhone").value;
+    if (!phone) {
+      console.log('No phone number to send auto reminder');
+      return;
+    }
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    if (!userData) {
+      console.log('No user data found');
+      return;
+    }
+
+    const remaining = total - getTotalGivenMoney();
+    let message = `🔔 REMINDER: You have to pay ₹${formatCurrency(remaining)} money ${userData.shopName} pay fast\n\n`;
+    message += generateBillText();
+    
+    // Open SMS app with the message
+    window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`;
+    
+    alert(`Auto-reminder sent to: ${phone}`);
+  }
+
+  function sendReminderNow() {
+    const phone = document.getElementById("customerPhone").value;
+    if (!phone) {
+      alert("Please enter customer phone number first.");
+      return;
+    }
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    if (!userData) {
+      alert("No user data found. Please log in again.");
+      return;
+    }
+
+    const remaining = total - getTotalGivenMoney();
+    if (remaining <= 0) {
+      alert("No remaining balance to send reminder for.");
+      return;
+    }
+
+    let message = `🔔 REMINDER: You have to pay ₹${formatCurrency(remaining)} money ${userData.shopName} pay fast\n\n`;
+    message += generateBillText();
+    
+    // Update reminder status if a payment date is set
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const folderIndex = savedFolders.findIndex(f => f.name === currentFolder);
+    if (folderIndex > -1 && savedFolders[folderIndex].paymentDateInfo) {
+      savedFolders[folderIndex].paymentDateInfo.messageSent = true;
+      localStorage.setItem("folders", JSON.stringify(savedFolders));
+      updatePaymentDateDisplay(savedFolders[folderIndex].paymentDateInfo);
+    }
+    
+    // Open SMS app
+    window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`;
+  }
+
+  function generateBillText() {
+    const totalGiven = getTotalGivenMoney();
+    const remaining = total - totalGiven;
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    const shopName = userData ? userData.shopName : "Shop";
+    
+    let billText = `🏪 ${shopName}\n`;
+    billText += `📅 Date: ${new Date().toLocaleDateString('en-IN')}\n`;
+    billText += `📂 Customer: ${currentFolder}\n`;
+    billText += "────────────────────\n";
+    billText += "📦 ITEMS:\n";
+    
+    products.forEach(p => {
+      if (p.name && p.price > 0) {
+        billText += `  • ${p.name} - ₹${formatCurrency(p.price)}\n`;
+      }
+    });
+    
+    billText += "────────────────────\n";
+    billText += `💰 Total: ₹${formatCurrency(total)}\n`;
+    billText += `💳 Paid: ₹${formatCurrency(totalGiven)}\n`;
+    billText += `⚖️ Remaining: ₹${formatCurrency(remaining)}\n`;
+    billText += "────────────────────\n";
+    billText += `📞 Contact: ${userData ? userData.phoneNumber : ''}\n`;
+    billText += "Thank you for your business! 🙏";
+    
+    return billText;
+  }
+
+  function generateBillPDF() {
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    const shopName = userData ? userData.shopName : "Shop";
+    const phone = userData ? userData.phoneNumber : "";
+    
+    // Create a printable bill HTML
+    const billHTML = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Bill - ${currentFolder}</title>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 20px; }
+          .header { text-align: center; margin-bottom: 20px; }
+          .shop-name { font-size: 24px; font-weight: bold; color: #333; }
+          .bill-details { margin: 15px 0; }
+          .items-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+          .items-table th, .items-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+          .items-table th { background-color: #f2f2f2; }
+          .summary { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-radius: 5px; }
+          .footer { margin-top: 30px; text-align: center; color: #666; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <div class="shop-name">${shopName}</div>
+          <div>Bill Receipt</div>
+        </div>
+        
+        <div class="bill-details">
+          <div><strong>Date:</strong> ${new Date().toLocaleDateString('en-IN')}</div>
+          <div><strong>Customer:</strong> ${currentFolder}</div>
+          <div><strong>Phone:</strong> ${document.getElementById("customerPhone").value || 'Not provided'}</div>
+        </div>
+        
+        <table class="items-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${products.map(p => p.name && p.price > 0 ? 
+              `<tr><td>${p.name}</td><td>${formatCurrency(p.price)}</td></tr>` : '').join('')}
+          </tbody>
+        </table>
+        
+        <div class="summary">
+          <div><strong>Total Amount:</strong> ₹${formatCurrency(total)}</div>
+          <div><strong>Total Paid:</strong> ₹${formatCurrency(getTotalGivenMoney())}</div>
+          <div><strong>Remaining Balance:</strong> ₹${formatCurrency(total - getTotalGivenMoney())}</div>
+        </div>
+        
+        <div class="footer">
+          <div>Contact: ${phone}</div>
+          <div>Thank you for your business!</div>
+        </div>
+      </body>
+      </html>
+    `;
+    
+    // Open bill in new window for printing
+    const billWindow = window.open('', '_blank');
+    billWindow.document.write(billHTML);
+    billWindow.document.close();
+    
+    // Auto-print after a short delay
+    setTimeout(() => {
+      billWindow.print();
+    }, 500);
+  }
+
+  // Check all folders for payment reminders
+  function checkAllPaymentReminders() {
+    const savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const today = new Date();
+    
+    savedFolders.forEach(folder => {
+      if (folder.paymentDateInfo && folder.phone) {
+        const dueDate = new Date(folder.paymentDateInfo.dueDate);
+        const timeDiff = dueDate - today;
+        const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+        
+        // Calculate remaining balance for this folder
+        const totalGiven = folder.givenMoney ? 
+          folder.givenMoney.reduce((sum, entry) => sum + entry.amount, 0) : 0;
+        const remaining = folder.total - totalGiven;
+        
+        // If due date arrived and not sent and still has balance
+        if (daysRemaining <= 0 && !folder.paymentDateInfo.messageSent && remaining > 0) {
+          const userData = JSON.parse(localStorage.getItem("userData"));
+          if (userData) {
+            let message = `🔔 REMINDER: You have to pay ₹${formatCurrency(remaining)} money ${userData.shopName} pay fast\n\n`;
+            message += `Bill Details:\n`;
+            message += `Customer: ${folder.name}\n`;
+            message += `Total: ₹${formatCurrency(folder.total)}\n`;
+            message += `Paid: ₹${formatCurrency(totalGiven)}\n`;
+            message += `Remaining: ₹${formatCurrency(remaining)}\n`;
+            message += `Contact: ${userData.phoneNumber}`;
+            
+            // In a real app, you would send the SMS automatically
+            // For now, we'll just log it and show an alert
+            console.log(`Auto reminder for: ${folder.name} to ${folder.phone}`);
+            alert(`Reminder sent to ${folder.name}: ${folder.phone}\n\nMessage: ${message}`);
+            
+            // Mark as sent
+            folder.paymentDateInfo.messageSent = true;
+          }
+        }
+      }
+    });
+
+    // Save updated folders
+    localStorage.setItem("folders", JSON.stringify(savedFolders));
+  }
+
+  // Login Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if user has already logged in
+    const savedUserData = localStorage.getItem("userData");
+    
+    if (savedUserData) {
+      // User already logged in, show main app
+      userData = JSON.parse(savedUserData);
+      document.getElementById("loginPage").style.display = "none";
+      document.getElementById("mainApp").style.display = "block";
+      updateAccountDisplay();
+      initializeApp();
+      
+      // Check for payment reminders
+      checkAllPaymentReminders();
+      
+      // Set up interval to check reminders periodically
+      paymentReminderInterval = setInterval(checkAllPaymentReminders, 60000); // Check every minute
+    } else {
+      // Show login page
+      document.getElementById("loginPage").style.display = "flex";
+    }
+    
+    // Handle login form submission
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const userName = document.getElementById("userName").value;
+      const shopName = document.getElementById("shopName").value;
+      const phoneNumber = document.getElementById("phoneNumber").value;
+      
+      if (userName && shopName && phoneNumber) {
+        // Save user data
+        userData = {
+          userName: userName,
+          shopName: shopName,
+          phoneNumber: phoneNumber,
+          loginTime: new Date().toISOString()
+        };
+        
+        localStorage.setItem("userData", JSON.stringify(userData));
+        
+        // Show success message
+        document.getElementById("loginMessage").textContent = "Account created successfully!";
+        
+        // Hide login page and show main app after a delay
+        setTimeout(function() {
+          document.getElementById("loginPage").style.display = "none";
+          document.getElementById("mainApp").style.display = "block";
+          updateAccountDisplay();
+          initializeApp();
+          
+          // Set up interval to check reminders periodically
+          paymentReminderInterval = setInterval(checkAllPaymentReminders, 60000);
+        }, 2000);
+      } else {
+        document.getElementById("loginMessage").textContent = "Please fill all fields!";
+      }
+    });
+
+    // Handle edit form submission
+    document.getElementById("editForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const userName = document.getElementById("editUserName").value;
+      const shopName = document.getElementById("editShopName").value;
+      const phoneNumber = document.getElementById("editPhoneNumber").value;
+      
+      if (userName && shopName && phoneNumber) {
+        // Update user data
+        userData = {
+          userName: userName,
+          shopName: shopName,
+          phoneNumber: phoneNumber,
+          loginTime: new Date().toISOString()
+        };
+        
+        localStorage.setItem("userData", JSON.stringify(userData));
+        updateAccountDisplay();
+        closeEditModal();
+        alert("✅ Account details updated successfully!");
+      } else {
+        alert("Please fill all fields!");
+      }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const accountSection = document.querySelector('.account-section');
+      const accountButton = document.getElementById('accountButton');
+      
+      if (!accountSection.contains(event.target)) {
+        closeAccountDropdown();
+      }
+    });
+
+    // Account button click event
+    document.getElementById('accountButton').addEventListener('click', toggleAccountDropdown);
+  });
+
+  function initializeApp() {
+    const savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    savedFolders.forEach(folder => displayFolder(folder.name));
+    
+    // Load main QR code on app start
+    loadMainQRCode();
+  }
+
+  // Main QR Code Functions (Global for the app)
+  function chooseQR() {
+    document.getElementById('qrPicker').click();
+  }
+
+  function saveMainQR(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    // Check if file is an image
+    if (!file.type.startsWith('image/')) {
+      alert('Please select an image file (JPEG, PNG, etc.)');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const qrImageData = e.target.result;
+      
+      // Save QR code to localStorage as global QR code
+      localStorage.setItem("mainQRCode", qrImageData);
+      
+      // Display the QR code
+      displayMainQRCode(qrImageData);
+      
+      alert('✅ Payment QR Code saved successfully! This QR code will be used for all payments.');
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function displayMainQRCode(qrImageData) {
+    const qrImage = document.getElementById('mainQrImage');
+    const noQRMessage = document.getElementById('noMainQRMessage');
+    const shareQRBtn = document.getElementById('shareMainQRBtn');
+    const removeQRBtn = document.getElementById('removeMainQRBtn');
+    
+    if (qrImageData) {
+      qrImage.src = qrImageData;
+      qrImage.style.display = 'block';
+      qrImage.classList.add('qr-preview');
+      noQRMessage.style.display = 'none';
+      shareQRBtn.style.display = 'inline-block';
+      removeQRBtn.style.display = 'inline-block';
+    } else {
+      qrImage.style.display = 'none';
+      noQRMessage.style.display = 'block';
+      shareQRBtn.style.display = 'none';
+      removeQRBtn.style.display = 'none';
+    }
+  }
+
+  function loadMainQRCode() {
+    const mainQRCode = localStorage.getItem("mainQRCode");
+    displayMainQRCode(mainQRCode);
+  }
+
+  function removeMainQR() {
+    if (confirm('Are you sure you want to remove the payment QR code?')) {
+      localStorage.removeItem("mainQRCode");
+      displayMainQRCode(null);
+      alert('QR code removed successfully.');
+    }
+  }
+
+  function shareMainQR() {
+    const mainQRCode = localStorage.getItem("mainQRCode");
+    
+    if (!mainQRCode) {
+      alert('No QR code available to share.');
+      return;
+    }
+
+    // Create a temporary link to download the QR code
+    const link = document.createElement('a');
+    link.href = mainQRCode;
+    link.download = `Payment_QR_Code.png`;
+    link.click();
+    
+    alert('QR code download started. You can share this image with customers.');
+  }
+
+  function sendPaymentLink() {
+    const phone = document.getElementById("customerPhone").value;
+    if (!phone) {
+      alert("Please enter customer phone number first.");
+      return;
+    }
+
+    const mainQRCode = localStorage.getItem("mainQRCode");
+    
+    if (!mainQRCode) {
+      alert("Please add a payment QR code first from the main page.");
+      return;
+    }
+
+    const remaining = total - getTotalGivenMoney();
+    let message = `Payment Request\n`;
+    message += `Amount: ₹${formatCurrency(remaining)}\n`;
+    message += `Please use our payment QR code (available on main page) to pay online.\n`;
+    message += `Thank you!`;
+    
+    window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`;
+  }
+
+  function createNewFolder(){
+    const folderName = prompt("Enter Folder Name:");
+    if(!folderName) return;
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    if(savedFolders.some(f => f.name === folderName)) return alert("Folder already exists!");
+    savedFolders.push({ 
+      name: folderName, 
+      products: [], 
+      total: 0, 
+      phone: "", 
+      givenMoney: [],
+      dailyLogs: []
+    });
+    localStorage.setItem("folders", JSON.stringify(savedFolders));
+    displayFolder(folderName);
+  }
+
+  function displayFolder(name){
+    const folderDiv = document.createElement("div");
+    folderDiv.className = "folder";
+    folderDiv.innerText = name;
+    folderDiv.onclick = () => openFolderPage(name);
+    document.getElementById("folders").appendChild(folderDiv);
+  }
+
+  function openFolderPage(name){
+    currentFolder = name;
+    document.getElementById("folderPage").style.display="none";
+    document.getElementById("billingPage").style.display="block";
+    document.getElementById("folderName").textContent = "📂 " + name;
+
+    const today = new Date().toLocaleDateString('en-IN');
+    document.getElementById("dateTime").textContent = "📅 " + today;
+
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const folder = savedFolders.find(f => f.name === name);
+    products = folder?.products || [];
+
+    if (!folder.dailyLogs) folder.dailyLogs = [];
+    if (!folder.givenMoney) folder.givenMoney = [];
+    
+    if (!folder.dailyLogs.includes(today)) {
+      folder.dailyLogs.push(today);
+      localStorage.setItem("folders", JSON.stringify(savedFolders));
+    }
+
+    const container = document.getElementById("productsContainer");
+    container.innerHTML = "";
+
+    const dateHeader = document.createElement("h3");
+    dateHeader.textContent = "🗓 Entries for " + today;
+    container.appendChild(dateHeader);
+
+    if(products.length === 0) addProductLine();
+    else products.forEach(p => addProductLine(p.name, p.price));
+
+    document.getElementById("customerPhone").value = folder?.phone || "";
+    document.getElementById("paymentDays").value = "";
+    updateTotal();
+    updateBalance();
+    displayMoneyHistory();
+    updatePaymentSummary();
+    
+    // Update payment date display
+    updatePaymentDateDisplay(folder?.paymentDateInfo);
+  }
+
+  function addProductLine(name = "", price = ""){
+    const container = document.getElementById("productsContainer");
+    const row = document.createElement("div");
+    row.className = "product-row";
+
+    const nameInput = document.createElement("input");
+    nameInput.type = "text"; nameInput.placeholder = "Enter product name"; nameInput.value = name;
+    nameInput.addEventListener("input", () => saveFolderSilently());
+
+    const priceInput = document.createElement("input");
+    priceInput.type = "number"; priceInput.placeholder = "Price ₹"; priceInput.value = price;
+    priceInput.addEventListener("input", () => updateTotal(true));
+
+    row.appendChild(nameInput);
+    row.appendChild(priceInput);
+    container.appendChild(row);
+    updateTotal(true);
+  }
+
+  function updateTotal(autoSave=false){
+    const prices = document.querySelectorAll('#productsContainer input[type="number"]');
+    total = 0; prices.forEach(p => total += toNumber(p.value));
+    document.getElementById("total").textContent = "Total: ₹" + formatCurrency(total);
+    if(autoSave) saveFolderSilently();
+    updatePaymentSummary();
+    
+    // Update payment date display to reflect payment status
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const folder = savedFolders.find(f => f.name === currentFolder);
+    if (folder && folder.paymentDateInfo) {
+      updatePaymentDateDisplay(folder.paymentDateInfo);
+    }
+  }
+
+  function updateBalance(autoSave=false){
+    const givenInput = document.getElementById("givenMoney");
+    const given = toNumber(givenInput.value);
+    
+    if (given > 0) {
+      showMoneySubtractionFeedback(given);
+      saveGivenMoney(given);
+    }
+    
+    const remElem = document.getElementById("remaining");
+    const remaining = total - getTotalGivenMoney();
+
+    if(remaining > 0){
+      remElem.textContent = "Remaining: ₹" + formatCurrency(remaining);
+      remElem.className = "red";
+    }else{
+      remElem.textContent = "✅ Fully Paid!";
+      remElem.className = "green";
+    }
+
+    remElem.classList.add("flash");
+    setTimeout(()=>remElem.classList.remove("flash"), 250);
+    givenInput.value = "";
+    saveFolderSilently();
+    displayMoneyHistory();
+    updatePaymentSummary();
+    
+    // Update payment date display to reflect payment status
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const folder = savedFolders.find(f => f.name === currentFolder);
+    if (folder && folder.paymentDateInfo) {
+      updatePaymentDateDisplay(folder.paymentDateInfo);
+    }
+  }
+
+  function showMoneySubtractionFeedback(amount) {
+    const feedback = document.createElement('div');
+    feedback.className = 'money-subtraction-feedback';
+    feedback.textContent = `- ₹${formatCurrency(amount)}`;
+    document.body.appendChild(feedback);
+    
+    setTimeout(() => {
+      document.body.removeChild(feedback);
+    }, 1500);
+  }
+
+  function updatePaymentSummary() {
+    const totalGiven = getTotalGivenMoney();
+    const remaining = total - totalGiven;
+    
+    document.getElementById('totalAmountDisplay').textContent = `₹${formatCurrency(total)}`;
+    document.getElementById('totalPaidDisplay').textContent = `₹${formatCurrency(totalGiven)}`;
+    document.getElementById('remainingBalanceDisplay').textContent = `₹${formatCurrency(remaining)}`;
+    
+    const remainingElem = document.getElementById('remainingBalanceDisplay');
+    if (remaining > 0) {
+      remainingElem.style.color = '#ff6b6b';
+    } else {
+      remainingElem.style.color = '#00ff7f';
+    }
+  }
+
+  function saveGivenMoney(amount) {
+    const today = new Date().toLocaleDateString('en-IN');
+    const now = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const folderIndex = savedFolders.findIndex(f => f.name === currentFolder);
+    
+    if (folderIndex > -1) {
+      if (!savedFolders[folderIndex].givenMoney) {
+        savedFolders[folderIndex].givenMoney = [];
+      }
+      
+      savedFolders[folderIndex].givenMoney.push({
+        date: today,
+        time: now,
+        amount: amount,
+        timestamp: new Date().toISOString()
+      });
+      
+      localStorage.setItem("folders", JSON.stringify(savedFolders));
+    }
+  }
+
+  function getTotalGivenMoney() {
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const folder = savedFolders.find(f => f.name === currentFolder);
+    if (!folder || !folder.givenMoney) return 0;
+    
+    return folder.givenMoney.reduce((sum, entry) => sum + entry.amount, 0);
+  }
+
+  function displayMoneyHistory() {
+    const historyContainer = document.getElementById("moneyHistory");
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const folder = savedFolders.find(f => f.name === currentFolder);
+    
+    if (!folder || !folder.givenMoney || folder.givenMoney.length === 0) {
+      historyContainer.innerHTML = "<p>No money given yet</p>";
+      return;
+    }
+    
+    const sortedHistory = [...folder.givenMoney].sort((a, b) => 
+      new Date(b.timestamp) - new Date(a.timestamp)
+    );
+    
+    historyContainer.innerHTML = sortedHistory.map(entry => `
+      <div class="money-entry">
+        <span class="money-date">${entry.date} ${entry.time}</span>
+        <span class="money-amount">₹${formatCurrency(entry.amount)}</span>
+      </div>
+    `).join('');
+  }
+
+  function saveFolderSilently(){
+    const rows = document.querySelectorAll('.product-row');
+    products = Array.from(rows)
+      .filter(r => r.querySelector('input[type="text"]'))
+      .map(r=>({
+        name: r.querySelector('input[type="text"]').value,
+        price: toNumber(r.querySelector('input[type="number"]').value)
+      }));
+    const phone = document.getElementById("customerPhone").value;
+    let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+    const index = savedFolders.findIndex(f=>f.name===currentFolder);
+    if(index>-1){ 
+      savedFolders[index]={...savedFolders[index],products,total,phone}; 
+    }
+    localStorage.setItem("folders", JSON.stringify(savedFolders));
+  }
+
+  document.addEventListener("input", e => {
+    if(e.target.id === "customerPhone") saveFolderSilently();
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const givenMoneyInput = document.getElementById('givenMoney');
+    givenMoneyInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        updateBalance(true);
+      }
+    });
+  });
+
+  function saveFolder(){ 
+    saveFolderSilently(); 
+    alert("✅ Folder saved successfully!"); 
+  }
+
+  function deleteFolder(){
+    if(confirm("Are you sure you want to delete this folder?")){
+      let savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+      savedFolders = savedFolders.filter(f=>f.name!==currentFolder);
+      localStorage.setItem("folders", JSON.stringify(savedFolders));
+      alert("🗑 Folder deleted successfully!");
+      showFolderPage();
+    }
+  }
+
+  function showFolderPage(){ 
+    document.getElementById("billingPage").style.display="none"; 
+    document.getElementById("folderPage").style.display="block"; 
+  }
+
+  function makeCall(){ 
+    const phone=document.getElementById("customerPhone").value; 
+    if(!phone)return alert("Please enter a phone number."); 
+    window.location.href=`tel:${phone}`; 
+  }
+
+  // UPDATED SMS FUNCTION - Now uses shop details from login
+  function sendSMS(){
+    const phone=document.getElementById("customerPhone").value;
+    if(!phone)return alert("Please enter a phone number first.");
+    
+    // Get user data from localStorage
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    if (!userData) {
+      alert("No user data found. Please log in again.");
+      return;
+    }
+    
+    const remaining = total - getTotalGivenMoney();
+    let message = "";
+    
+    if (remaining > 0) {
+      message = `You have to pay ₹${formatCurrency(remaining)} money ${userData.shopName} pay fast`;
+    } else {
+      message = `✅ Fully Paid! Thank you for your payment to ${userData.shopName}.`;
+    }
+    
+    window.location.href=`sms:${phone}?body=${encodeURIComponent(message)}`;
+  }
+
+  function openVideo(){ 
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("tutorialVideo");
+    modal.style.display = "flex"; 
+    video.play();
+  }
+  
+  function closeVideo(){ 
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("tutorialVideo");
+    modal.style.display = "none"; 
+    video.pause();
+    video.currentTime = 0;
+  }
+
+  // Clean up interval when page unloads
+  window.addEventListener('beforeunload', () => {
+    if (paymentReminderInterval) {
+      clearInterval(paymentReminderInterval);
+    }
+  });
+</script>
+</body>
+</html>
